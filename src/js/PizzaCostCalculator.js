@@ -21,7 +21,9 @@ $(function () {
         return result;
     }
 
-    function refresh() {
+    function refresh(e) {
+        if (e && e.which === 13)
+            $(this).blur();
         $smallPPSI.text(calculatePPSI($smallInches.val(), $smallPrice.val()));
         $mediumPPSI.text(calculatePPSI($mediumInches.val(), $mediumPrice.val()));
         $largePPSI.text(calculatePPSI($largeInches.val(), $largePrice.val()));
